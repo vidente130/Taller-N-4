@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        SistemaImpl sistema = new SistemaImpl();
+        sistema.menu();
     }
 }
