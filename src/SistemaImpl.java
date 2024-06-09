@@ -1,3 +1,5 @@
+import edu.princeton.cs.stdlib.In;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -77,11 +79,45 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void cargarVehiculos() {
+        In in = new In ("vehiculos.csv");
+
+        String linea = in.readLine();
+
+        while(linea != null) {
+            String[] campos = linea.split(",");
+
+            int id = Integer.parseInt(campos[0]);
+            String marca = campos[1];
+            String modelo = campos[2];
+            int anioFabricacion = Integer.parseInt(campos[3]);
+            int kilometraje = Integer.parseInt(campos[4]);
+            String tipo = campos[5];
+            String atributo1 = campos[6];
+            String atributo2 = campos[7];
+            Vehiculo vehiculo = new Vehiculo(id,marca,modelo,anioFabricacion,kilometraje,tipo,atributo1,atributo2);
+            vehiculos.add(vehiculo);
+            linea = in.readLine();
+        }
 
     }
 
     @Override
     public void cargarMantenimientos() {
+        In in2 = new In ("mantenimientos.csv");
+
+        String linea = in2.readLine();
+        while (linea != null){
+            String[] campos = linea.split(",");
+            int idMantenimiento = Integer.parseInt(campos[0]);
+            int idVehiculo = Integer.parseInt(campos[1]);
+            String fecha = campos[2];
+            String tipoMantenimiento = campos[3];
+            String descripcion = campos[4];
+            Mantenimiento mantenimiento = new Mantenimiento(idMantenimiento,idVehiculo,fecha,tipoMantenimiento,descripcion);
+            mantenimientos.add(mantenimiento);
+
+            linea = in2.readLine();
+        }
 
     }
 

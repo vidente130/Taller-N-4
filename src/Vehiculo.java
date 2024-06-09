@@ -1,7 +1,5 @@
 public class Vehiculo extends IdVehiculo{
 
-    private int id;
-
     private String marca;
 
     private String modelo;
