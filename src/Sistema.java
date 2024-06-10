@@ -7,30 +7,30 @@ public interface Sistema {
      */
     void mensajeMenu1();
 
-    // mensajeMenu2(): esto hace que se puedan dar los mensajes de las opciones del submenu de la opcion de "ver Vehiculos"
+    // mensajeMenu2(): esto hace que se puedan dar los mensajes de las opciones del submenu de la opcion de "ver Vehiculos" y haciendo lo que hay dentro
 
     /**
      * esta funcion permite dar las opciones del submenu de ver vehiculos
      */
 
-    void mensajeMenu2();
+    void menu2();
 
-    // mensajeMenu3(): esto hace que se puedan dar los mensajes de las opcines del submenu de la opcion "ver historial de mantenimiento"
+    // menu3(): esto hace que se puedan dar los mensajes de las opcines del submenu de la opcion "ver historial de mantenimiento" y pueda hacer cada una de las sub-opciones
 
     /**
      * esta funcion permite poder ver las opciones del submenu de la opcion "ver historial de vehiculos"
      */
 
-    void mensajeMenu3();
+    void menu3();
 
 
-    // mensajeMenu4(): esto hace que se puedan ver los mensajes de las opciones del submenu de la opcion "ver boletas"
+    // menu4(): esto hace que se puedan ver los mensajes de las opciones del submenu de la opcion "ver boletas" y con sus sub-opciones
 
     /**
      * esta funcion permite poder ver las opciones del submenu de la opcion "ver boletas"
      */
 
-    void mensajeMenu4();
+    void menu4();
 
     // cargarVehiculos(): esto hace que se puedan cargar el archivo "vehiculos.csv" haciendo que se puedan usar en el programa
 
@@ -46,6 +46,13 @@ public interface Sistema {
      */
 
     void cargarMantenimientos();
+
+    // vervehiculos(): esto hace que se puedan ver todos los vehiculos del archivos vehiculos mas los que se pueden agregar.
+
+    /**
+     * esta funcion permite poder ver cada uno de los vehiculos que hay en la pagina
+     */
+    void verVehiculos();
 
     // buscarPorTipo(): esto hace que se pueda buscar un vehiculo por su tipo para eso primero hay que usar el parametro tipo para buscarlo
 

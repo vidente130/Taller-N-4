@@ -25,28 +25,32 @@ public class Vehiculo extends IdVehiculo{
         this.atributo2 = atributo2;
     }
 
-    public int getId (){
-        return id;
-    }
     public String getMarca(){
+
         return marca;
     }
     public String getModelo(){
+
         return modelo;
     }
     public int getAnioFabricacion(){
+
         return anioFabricacion;
     }
     public int getKilometraje(){
+
         return kilometraje;
     }
     public String getTipoVehiculo(){
+
         return tipoVehiculo;
     }
     public String getAtributo1(){
+
         return atributo1;
     }
-    public String atributo2(){
+    public String getAtributo2(){
+
         return atributo2;
     }
 }
