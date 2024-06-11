@@ -34,14 +34,17 @@ public class SistemaImpl implements Sistema {
 
                 case "3" :
 
+                    agregarVehiculo();
                     break;
 
                 case "4" :
 
+                    agregarMantenimineto();
                     break;
 
                 case "5" :
 
+                    generarBoleta();
                     break;
 
                 case "6" :
@@ -85,21 +88,25 @@ public class SistemaImpl implements Sistema {
         String pregunta2 = opcion.nextLine();
         while (true){
             switch (pregunta2){
-
                 case "1" :
+
                     verVehiculos();
                     break;
+
                 case "2" :
 
+                    buscarPorTipo();
                     break;
+
                 case "3" :
 
+                    buscarPorId();
                     break;
+
                 case "4" :
 
                     System.out.println("Saliendo...");
                     return;
-
             }
             System.out.println("------- ( Ver vehiculos ) -------");
             System.out.println("1.- Listar todos los vehiculos.");
@@ -108,6 +115,7 @@ public class SistemaImpl implements Sistema {
             System.out.println("4.- Volver al menu principal.");
             System.out.println("Elija una opcion: ");
             pregunta2 = opcion.nextLine();
+            pregunta2 = opcion.nextLine();
         }
 
     }
@@ -115,7 +123,7 @@ public class SistemaImpl implements Sistema {
     @Override
     public void menu3() {
         System.out.println("-------( Ver historial de mantenimiento )-------");
-        System.out.println("1.-  Mostrar historial por vehiculo.");
+        System.out.println("1.- Mostrar historial por vehiculo.");
         System.out.println("2.- Volver al menu principal.");
         System.out.println("Elija una opcion: ");
         String pregunta3 = opcion.nextLine();
@@ -124,6 +132,7 @@ public class SistemaImpl implements Sistema {
 
                 case "1" :
 
+                    mostrarHistorialVehiculo();
                     break;
 
                 case "2" :
@@ -152,7 +161,7 @@ public class SistemaImpl implements Sistema {
             switch (pregunta4){
 
                 case "1" :
-
+                    verBoletas();
                     break;
 
                 case "2" :
@@ -206,7 +215,7 @@ public class SistemaImpl implements Sistema {
             String fecha = campos[2];
             String tipoMantenimiento = campos[3];
             String descripcion = campos[4];
-            Mantenimiento mantenimiento = new Mantenimiento(idMantenimiento,idVehiculo,fecha,tipoMantenimiento,descripcion);
+            Mantenimiento mantenimiento = new Mantenimiento(idVehiculo,idMantenimiento,fecha,tipoMantenimiento,descripcion);
             mantenimientos.add(mantenimiento);
 
             linea = in2.readLine();
@@ -317,7 +326,7 @@ public class SistemaImpl implements Sistema {
                         System.out.println("-------------------------------------");
                     }
                     else {
-                        System.out.println("No hay vehiculo");
+                        System.out.println("No hay vehiculo.");
                         System.out.println("-------------------------------------");
                     }
 
@@ -333,7 +342,7 @@ public class SistemaImpl implements Sistema {
                         System.out.println(vehiculos.get(i + 3).getAtributo2());
                         System.out.println("---------------------------------------");
                     } else {
-                        System.out.println("No hay vehiculo");
+                        System.out.println("No hay vehiculo.");
                         System.out.println("--------------------------------------");
                     }
                     System.out.println("Pagina " + (pagina));
@@ -346,49 +355,70 @@ public class SistemaImpl implements Sistema {
                 i = i - 4;
                 pagina = pagina - 1;
                 if (i >= 0) {
-                    System.out.println("------- ( Vehiculo " + (i - 1) + ") -------");
-                    System.out.println(vehiculos.get(i).getId());
-                    System.out.println(vehiculos.get(i).getMarca());
-                    System.out.println(vehiculos.get(i).getModelo());
-                    System.out.println(vehiculos.get(i).getAnioFabricacion());
-                    System.out.println(vehiculos.get(i).getKilometraje());
-                    System.out.println(vehiculos.get(i).getTipoVehiculo());
-                    System.out.println(vehiculos.get(i).getAtributo1());
-                    System.out.println(vehiculos.get(i).getAtributo2());
-                    System.out.println("---------------------------------");
-
-                    System.out.println("------- ( Vehiculo " + (i - 2) + ") -------");
-                    System.out.println(vehiculos.get(i - 1).getId());
-                    System.out.println(vehiculos.get(i - 1).getMarca());
-                    System.out.println(vehiculos.get(i - 1).getModelo());
-                    System.out.println(vehiculos.get(i - 1).getAnioFabricacion());
-                    System.out.println(vehiculos.get(i - 1).getKilometraje());
-                    System.out.println(vehiculos.get(i - 1).getTipoVehiculo());
-                    System.out.println(vehiculos.get(i - 1).getAtributo1());
-                    System.out.println(vehiculos.get(i - 1).getAtributo2());
-                    System.out.println("----------------------------------");
-
-                    System.out.println("------- ( Vehiculo " + (i - 3) + ") -------");
-                    System.out.println(vehiculos.get(i - 2).getId());
-                    System.out.println(vehiculos.get(i - 2).getMarca());
-                    System.out.println(vehiculos.get(i - 2).getModelo());
-                    System.out.println(vehiculos.get(i - 2).getAnioFabricacion());
-                    System.out.println(vehiculos.get(i - 2).getKilometraje());
-                    System.out.println(vehiculos.get(i - 2).getTipoVehiculo());
-                    System.out.println(vehiculos.get(i - 2).getAtributo1());
-                    System.out.println(vehiculos.get(i - 2).getAtributo2());
-                    System.out.println("------------------------------------");
-
-                    System.out.println("------- ( Vehiculo " + (i - 3) + ") -------");
-                    System.out.println(vehiculos.get(i - 3).getId());
-                    System.out.println(vehiculos.get(i - 3).getMarca());
-                    System.out.println(vehiculos.get(i - 3).getModelo());
-                    System.out.println(vehiculos.get(i - 3).getAnioFabricacion());
-                    System.out.println(vehiculos.get(i - 3).getKilometraje());
-                    System.out.println(vehiculos.get(i - 3).getTipoVehiculo());
-                    System.out.println(vehiculos.get(i - 3).getAtributo1());
-                    System.out.println(vehiculos.get(i - 3).getAtributo2());
-                    System.out.println("--------------------------------------");
+                    if (i < vehiculos.size()){
+                        System.out.println("------- ( Vehiculo " + (i + 1) + ") -------");
+                        System.out.println(vehiculos.get(i).getId());
+                        System.out.println(vehiculos.get(i).getMarca());
+                        System.out.println(vehiculos.get(i).getModelo());
+                        System.out.println(vehiculos.get(i).getAnioFabricacion());
+                        System.out.println(vehiculos.get(i).getKilometraje());
+                        System.out.println(vehiculos.get(i).getTipoVehiculo());
+                        System.out.println(vehiculos.get(i).getAtributo1());
+                        System.out.println(vehiculos.get(i).getAtributo2());
+                        System.out.println("---------------------------------");
+                    }
+                    else{
+                        System.out.println("No hay vehiculo.");
+                        System.out.println("---------------------------------");
+                    }
+                    if(i < vehiculos.size()) {
+                        System.out.println("------- ( Vehiculo " + (i + 2) + ") -------");
+                        System.out.println(vehiculos.get(i + 1).getId());
+                        System.out.println(vehiculos.get(i + 1).getMarca());
+                        System.out.println(vehiculos.get(i + 1).getModelo());
+                        System.out.println(vehiculos.get(i + 1).getAnioFabricacion());
+                        System.out.println(vehiculos.get(i + 1).getKilometraje());
+                        System.out.println(vehiculos.get(i + 1).getTipoVehiculo());
+                        System.out.println(vehiculos.get(i + 1).getAtributo1());
+                        System.out.println(vehiculos.get(i + 1).getAtributo2());
+                        System.out.println("----------------------------------");
+                    }
+                    else{
+                        System.out.println("No hay vehiculo.");
+                        System.out.println("----------------------------------");
+                    }
+                    if (i < vehiculos.size()) {
+                        System.out.println("------- ( Vehiculo " + (i + 3) + ") -------");
+                        System.out.println(vehiculos.get(i + 2).getId());
+                        System.out.println(vehiculos.get(i + 2).getMarca());
+                        System.out.println(vehiculos.get(i + 2).getModelo());
+                        System.out.println(vehiculos.get(i + 2).getAnioFabricacion());
+                        System.out.println(vehiculos.get(i + 2).getKilometraje());
+                        System.out.println(vehiculos.get(i + 2).getTipoVehiculo());
+                        System.out.println(vehiculos.get(i + 2).getAtributo1());
+                        System.out.println(vehiculos.get(i + 2).getAtributo2());
+                        System.out.println("------------------------------------");
+                    }
+                    else{
+                        System.out.println("No hay vehiculo.");
+                        System.out.println("------------------------------------");
+                    }
+                    if (i < vehiculos.size()) {
+                        System.out.println("------- ( Vehiculo " + (i + 4) + ") -------");
+                        System.out.println(vehiculos.get(i + 3).getId());
+                        System.out.println(vehiculos.get(i + 3).getMarca());
+                        System.out.println(vehiculos.get(i + 3).getModelo());
+                        System.out.println(vehiculos.get(i + 3).getAnioFabricacion());
+                        System.out.println(vehiculos.get(i + 3).getKilometraje());
+                        System.out.println(vehiculos.get(i + 3).getTipoVehiculo());
+                        System.out.println(vehiculos.get(i + 3).getAtributo1());
+                        System.out.println(vehiculos.get(i + 3).getAtributo2());
+                        System.out.println("--------------------------------------");
+                    }
+                    else{
+                        System.out.println("No hay vehiculo.");
+                        System.out.println("--------------------------------------");
+                    }
                     System.out.println("Pagina " + (pagina));
                 } else {
                     System.out.println("Disculpe no se puede seguir");
@@ -407,22 +437,184 @@ public class SistemaImpl implements Sistema {
     }
 
     @Override
-    public void buscarPorTipo(String tipo) {
+    public void buscarPorTipo() {
+        int pagina = 1;
+        int i = 0;
+        int i2 = 0;
+        System.out.println("¿Cual es el tipo del vehiculo?");
+        String tipo = opcion.nextLine();
+        if(tipo.equalsIgnoreCase("Automóvil")){
+            while(true){
+                System.out.println("1.- Siguiente Pagina.");
+                System.out.println("2.- Pagina anterior.");
+                System.out.println("3.- Salir.");
+                String pregunta6 = opcion.nextLine();
+
+                if (pregunta6.equals("1")){
+                    if(i >= 0){
+                        if(i < vehiculos.size()){
+                            for(i = i; i < vehiculos.size(); i++){
+                                if(vehiculos.get(i).getTipoVehiculo().equalsIgnoreCase("Automóvil")){;
+                                    i2 = i2 + 1;
+                                    System.out.println("-------( Automovil " + i2 + " )-------");
+                                    System.out.println(vehiculos.get(i).getId());
+                                    System.out.println(vehiculos.get(i).getMarca());
+                                    System.out.println(vehiculos.get(i).getModelo());
+                                    System.out.println(vehiculos.get(i).getAnioFabricacion());
+                                    System.out.println(vehiculos.get(i).getKilometraje());
+                                    System.out.println(vehiculos.get(i).getAtributo1());
+                                    System.out.println(vehiculos.get(i).getAtributo2());
+                                    System.out.println("----------------------------------------------");
+                                    System.out.println("Pagina " + pagina);
+                                    pagina = pagina + 1;
+                                    i = i + 1;
+                                    break;
+                                }
+                            }
+                        }
+                        else{
+                            System.out.println("No hay automovil.");
+                            System.out.println("----------------------------------------");
+                        }
+                    }
+                    else{
+                        System.out.println("No hay automovil.");
+                        System.out.println("------------------------------------------");
+                    }
+                }
+                if(pregunta6.equals("2")){
+                   if(i >= 0){
+                       if(i < vehiculos.size()){
+                           for (i = i; i >= 0; i--){
+                               if(vehiculos.get(i).getTipoVehiculo().equalsIgnoreCase("Automóvil")) {
+                                   i2 = i2 - 1;
+                                   System.out.println("-------( Automovil " + i2 + " )-------");
+                                   System.out.println(vehiculos.get(i).getId());
+                                   System.out.println(vehiculos.get(i).getMarca());
+                                   System.out.println(vehiculos.get(i).getModelo());
+                                   System.out.println(vehiculos.get(i).getAnioFabricacion());
+                                   System.out.println(vehiculos.get(i).getKilometraje());
+                                   System.out.println(vehiculos.get(i).getAtributo1());
+                                   System.out.println(vehiculos.get(i).getAtributo2());
+                                   System.out.println("----------------------------------------");
+                                   System.out.println("Pagina " + pagina);
+                                   pagina = pagina - 1;
+                                   i = i - 1;
+                                   break;
+                               }
+                           }
+                       }
+                       else{
+                           System.out.println("No hay automovil.");
+                           System.out.println("----------------------------------------");
+                       }
+                   }
+                   else{
+                       System.out.println("No hay Automovil.");
+                       System.out.println("-------------------------------------------");
+                   }
+                }
+                if (pregunta6.equals("3")){
+                    System.out.println("Saliendo...");
+                    break;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void buscarPorId() {
+        int verificador = 0;
+        System.out.println("¿Cual es el ID del vehiculo?");
+        int pregunta7 = opcion.nextInt();
+        for (int i = 0;i < vehiculos.size(); i++){
+            if(pregunta7 == vehiculos.get(i).getId()){
+                verificador = verificador + 1;
+                System.out.println(vehiculos.get(i).getMarca());
+                System.out.println(vehiculos.get(i).getModelo());
+                System.out.println(vehiculos.get(i).getAnioFabricacion());
+                System.out.println(vehiculos.get(i).getKilometraje());
+                System.out.println(vehiculos.get(i).getTipoVehiculo());
+                System.out.println(vehiculos.get(i).getAtributo1());
+                System.out.println(vehiculos.get(i).getAtributo2());
+            }
+        }
+        if (verificador == 0){
+            System.out.println("No se encontro el vehiculo");
+        }
 
     }
 
     @Override
-    public void buscarPorId(int id) {
-
-    }
-
-    @Override
-    public void mostrarHistorialVehiculo(int id) {
-
+    public void mostrarHistorialVehiculo() {
+        System.out.println("¿Cual es el ID del vehiculo?");
+        int pregunta8 = opcion.nextInt();
+        for (int i = 0; i < mantenimientos.size(); i++){
+            if(mantenimientos.get(i).getId() == pregunta8){
+                System.out.println("Historial ");
+                System.out.println(mantenimientos.get(i).getFecha());
+                System.out.println(mantenimientos.get(i).getTipoMantenimiento());
+                System.out.println(mantenimientos.get(i).getDescripcion());
+                System.out.println("---------------------------------------");
+            }
+        }
     }
 
     @Override
     public void agregarVehiculo() {
+        System.out.println("¿De que marca es el automovil?");
+        String marca = opcion.nextLine();
+        if(!marca.equals("")){
+            System.out.println("¿De que modelo es?");
+            String modelo = opcion.nextLine();
+            if(!modelo.equals("")){
+                System.out.println("¿Cuando se fabrico?");
+                int anios = opcion.nextInt();
+                if(anios >= 1950 && anios <= 2024){
+                    System.out.println("¿Cuanto kilometraje trae?");
+                    int kilometraje = opcion.nextInt();
+                    if(kilometraje > 1000){
+                        System.out.println("¿Que tipo de vehiculo es?");
+                        String tipo = opcion.nextLine();
+                        tipo = opcion.nextLine();
+                        if(tipo.equals("Automóvil") || tipo.equals("Camión") || tipo.equals("Autobús") || tipo.equals("Motocicleta")){
+                            System.out.println("¿Cual es su primer atributo?");
+                            String atributo1 = opcion.nextLine();
+                            if (!atributo1.equals("")){
+                                System.out.println("¿Cual es su primer atributo?");
+                                String atributo2 = opcion.nextLine();
+                                if(!atributo2.equals("")){
+                                    int id = vehiculos.size() + 1;
+                                    Vehiculo vehiculo2 = new Vehiculo(id,marca,modelo,anios,kilometraje,tipo,atributo1,atributo2);
+                                    vehiculos.add(vehiculo2);
+                                }
+                                else{
+                                    System.out.println("Porfavor, rellene el atributo 2.");
+                                }
+                            }
+                            else{
+                                System.out.println("Porfavor, rellene el atributo 1.");
+                            }
+                        }
+                        else{
+                            System.out.println("Porfavor elija uno de los tipos de vehiculos que hay.");
+                        }
+                    }
+                    else{
+                        System.out.println("Porfavor, elija un kilometraje que se mayor a 1000.");
+                    }
+                }
+                else{
+                    System.out.println("Porfavor, elija una fecha de fabricacion mayor al año 1950.");
+                }
+            }
+            else{
+                System.out.println("Porfavor, elija un modelo.");
+            }
+        }
+        else{
+            System.out.println("Porfavor rellene la marca.");
+        }
 
     }
 
@@ -443,6 +635,7 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void salir() {
+
 
     }
 }

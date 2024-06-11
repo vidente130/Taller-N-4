@@ -58,28 +58,25 @@ public interface Sistema {
 
     /**
      * esta funcion permite buscar un vehiculo por su tipo
-     * @param tipo el tipo de vehiculo
      */
-    void buscarPorTipo(String tipo);
+    void buscarPorTipo();
 
     // buscarPorId(): esto hace que se pueda buscar un vehiculo por su id, mostrando un mensaje de que existe dentro de la pagina o mostrando que no esta en la pagina
 
     /**
      * esta funcion permite buscar un vehiculo por su id
-     * @param id el id del vehiculo
      */
 
-    void buscarPorId(int id);
+    void buscarPorId();
 
 
     //mostrarHistorialVehiculo(): esto hace que se pueda ver el historial de mantenimiento del vehiculo buscado por su id, mostrando su tipo, fechas de mantenimientos y su descripcion
 
     /**
      * esta funcion permite ver el historial del mantenimineto de un vehiculo
-     * @param id el id del vehiculo
      */
 
-    void mostrarHistorialVehiculo(int id);
+    void mostrarHistorialVehiculo();
 
     //  agregarVehiculo(): esto hace que se pueda agregar un vehiculo a la pagina haciendo que se pueda agregar al archivo vehiculos.csv
 

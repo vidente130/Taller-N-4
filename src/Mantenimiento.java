@@ -16,7 +16,7 @@ public class Mantenimiento extends IdVehiculo{
         this.descripcion = descripcion;
     }
 
-    public int getIdMantenimient(){
+    public int getIdMantenimiento(){
         return idMantenimiento;
     }
     public String getFecha(){
