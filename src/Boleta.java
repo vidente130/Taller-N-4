@@ -1,5 +1,7 @@
 public class Boleta {
 
+    private int id;
+
     private Vehiculo vehiculo;
 
     private Mantenimiento mantenimiento;
@@ -8,27 +10,32 @@ public class Boleta {
 
     private double pagaTotal;
 
-    public Boleta(Vehiculo vehiculo, Mantenimiento mantenimiento, String fechaEmision, double pagaTotal) {
+    public Boleta(int id, Vehiculo vehiculo, Mantenimiento mantenimiento, String fechaEmision, double pagaTotal) {
+        this.id = id;
         this.vehiculo = vehiculo;
         this.mantenimiento = mantenimiento;
         this.fechaEmision = fechaEmision;
         this.pagaTotal = pagaTotal;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
     public Vehiculo getVehiculo() {
-        return vehiculo;
+        return this.vehiculo;
     }
 
     public Mantenimiento getMantenimiento() {
-        return mantenimiento;
+        return this.mantenimiento;
     }
 
     public String getFechaEmision() {
-        return fechaEmision;
+        return this.fechaEmision;
     }
 
     public double getPagaTotal() {
-        return pagaTotal;
+        return this.pagaTotal;
     }
 
 }
