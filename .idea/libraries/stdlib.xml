@@ -2,6 +2,7 @@
   <library name="stdlib">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../libs/stdlib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../stdlib.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,0 +1,71 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+left to right direction
+skin rose
+class IdVehiculo{
+    -id: int
+    +IdVehiculo(id: int)
+    +getId(): int
+}
+
+class Mantenimiento{
+    -idMantenimiento: int
+    -fecha: String
+    -tipoMantenimiento: String
+    -descripcion: String
+    +Mantenimiento( idMantenimiento: int, id: int , fecha: String , tipoMantenimiento: String , descripcion :String)
+    +getIdMantenimiento(); int
+    +getFecha(): String
+    +getTipoMantenimiento(): String
+    +getDescripcion(): String
+}
+
+interface Sistema{
++mensajeMenu(): void
++menu2(): void
++menu3(): void
++menu4(): void
++cargarMantenimientos(): void
++verVehiculos(): void
++buscarPorTipo(): void
++buscarPorId(): void
++mostrarHistorialVehiculo(): void
++agregarVehiculo(): void
++agregarMantenimiento(): void
++generarBoleta(): void
++verBoletas(): void
++salir(): void
+}
+
+class SistemaImpl{
++SistemaImpl()
++menu(): void
+}
+class Vehiculo{
+-marca: String
+-modelo: String
+-anioFabricacion: int
+-kilometraje: int
+-tipoVehiculo: String
+-atributo1: String
+-atributo2: String
++Vehiculo((id: int, marca: String, modelo: String, anioFabricacion: int, kilometraje: int, tipoVehiculo: String, atributo1: String, atributo2: String)
++getMarca(): String
++getModelo(): String
++getAnioFabricacion(): int
++getKilometraje(): int
++getTipoVehiculo(): String
++getAtributo1(): String
++getAtributo2(): String
+
+}
+
+Vehiculo --|> IdVehiculo : -id: int
+Mantenimiento --|> IdVehiculo: -id: int
+
+SistemaImpl ..|> Sistema: implementa
+Vehiculo --> SistemaImpl: -vehiculos: ArrayList<Vehiculo>
+Mantenimiento --> SistemaImpl: -mantenimientos: ArrayList<Mantenimiento>
+
+
+@enduml
