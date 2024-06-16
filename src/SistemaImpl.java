@@ -236,7 +236,7 @@ public class SistemaImpl implements Sistema {
             String fecha = campos[2];
             String tipoMantenimiento = campos[3];
             String descripcion = campos[4];
-            Mantenimiento mantenimiento = new Mantenimiento(idMantenimiento,idVehiculo,fecha,tipoMantenimiento,descripcion);
+            Mantenimiento mantenimiento = new Mantenimiento(idMantenimiento,idVehiculo  ,fecha,tipoMantenimiento,descripcion);
             mantenimientos.add(mantenimiento);
 
             linea = in2.readLine();
@@ -658,6 +658,7 @@ public class SistemaImpl implements Sistema {
                                     int id = vehiculos.size() + 1;
                                     Vehiculo vehiculo2 = new Vehiculo(id,marca,modelo,anios,kilometraje,tipo,atributo1,atributo2);
                                     vehiculos.add(vehiculo2);
+                                    System.out.println("Se agrego el vehiculo al sistema");
                                 }
                                 else{
                                     System.out.println("Porfavor, rellene el atributo 2.");
@@ -709,6 +710,7 @@ public class SistemaImpl implements Sistema {
                     if(descripcion.equals("realizado correctamente") || descripcion.equals("sin problemas") || descripcion.equals("requiere seguimiento") || descripcion.equals("reemplazo exitoso")){
                         Mantenimiento mantenimiento1 = new Mantenimiento (idMan,idVehiculo,fecha,mantenimiento,descripcion);
                         mantenimientos.add(mantenimiento1);
+                        System.out.println("Se agrego el mantenimiento al sistema");
                     }
                     else{
                         System.out.println("Porfavor, elija una de las descripciones que hay");
