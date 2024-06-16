@@ -1,20 +1,31 @@
-import edu.princeton.cs.stdlib.In;
 
+// Las importaciones de las librerias para poder hacer el codigo, por ejemplo edu.pricenton.cs.stdlib.In es para leer los archivos de vehiculos.csv y mantenimientos.csv,
+// despues el java.util.ArrayList es para crear las listas de las clases vehiculo y mantenimiento llamadas "vehicul0s" y "mantenimiento" despues el java.util.Scanner es para
+// crear el Scanner llamado opcion donde los usuarios pueden esccribir las opciones
+import edu.princeton.cs.stdlib.In;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// clase del sistema llamado "SistemaImpl" donde se usaron las implementaciones de la interface llamada "Sistema"
 public class SistemaImpl implements Sistema {
 
+    // Los atributos privados de la clase SistemaImpl, los cuales son 2 listas de las clases "Vehiculo" y "Mantenimiento"
     private ArrayList<Vehiculo> vehiculos;
 
     private ArrayList<Mantenimiento> mantenimientos;
 
+    // El constructor de la clase SistemaImpl, donde crea las ArrayList de las listas vehiculos y mantenimientos.
     public SistemaImpl() {
         this.vehiculos = new ArrayList<>();
         this.mantenimientos = new ArrayList<>();
     }
+
+    // La creacion del Scanner llamado "opcion"
     Scanner opcion = new Scanner(System.in);
 
+    // menu(): Esto hace que se pueda mostrar el menu principal del programa, con sus opciones, con la carga de archivos de los archivos
+    // "vehiculos.csv"y "mantenimientos.csv", tambien que se activa la funcion "mensajeMenu1()", donde se usa el Scanner "opcion" y con la salida del programa.
+    // que guarda los nuevos cambios de los archivos y se termina
     public void menu() {
         cargarVehiculos();
         cargarMantenimientos();
@@ -64,6 +75,7 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    // Se usa mensajeMenu1() en la parte de menu() para mostrar las opciones que dentro del menu principal
     @Override
     public void mensajeMenu1() {
         System.out.println("------{ Bienvenido a AutoFleet }-------");
@@ -77,6 +89,8 @@ public class SistemaImpl implements Sistema {
         System.out.println("Elija una opcion: ");
     }
 
+    // Se usa dentro del switch (en el "case 1"), donde muestra las opciones del submenu, dejando al usuario elegir cada una de las opciones
+    // que hay dentro del programa y las opcines son 4, ahi la ultima opcion es volver al menu principal
     @Override
     public void menu2() {
         System.out.println("-------( Ver vehiculos )-------");
@@ -120,6 +134,8 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    // Se usa dentro del switch(en el "case 2"), donde muestra las opciones, dejando al usuario elegir la opcion que quiera
+    // , donde hay 2 opciones, ahi a ultima es volver al menu principal
     @Override
     public void menu3() {
         System.out.println("-------( Ver historial de mantenimiento )-------");
@@ -149,6 +165,8 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    // Se usa dentro del switch(en el "case 6"), donde muestra las opciones que hay, dejando al usuario que pueda elegir esas opciones
+    // tambien hay 2 opciones, ahi en la ultima opcion es volver al menu principal
     @Override
     public void menu4() {
 
@@ -179,6 +197,7 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    //Se usa en el menu principal en el momento que se inicia el programa, ahi se usa la funcion cargarVehiculos para cargar el archivo vehiculos.csv
     @Override
     public void cargarVehiculos() {
         In in = new In ("vehiculos.csv");
@@ -203,6 +222,8 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    // Se usa en el menu pricipal en el momento que se inicia el programa, donde se carga el archivo de mantenimientos.csv.
+
     @Override
     public void cargarMantenimientos() {
         In in2 = new In ("mantenimientos.csv");
@@ -215,7 +236,7 @@ public class SistemaImpl implements Sistema {
             String fecha = campos[2];
             String tipoMantenimiento = campos[3];
             String descripcion = campos[4];
-            Mantenimiento mantenimiento = new Mantenimiento(idVehiculo,idMantenimiento,fecha,tipoMantenimiento,descripcion);
+            Mantenimiento mantenimiento = new Mantenimiento(idMantenimiento,idVehiculo,fecha,tipoMantenimiento,descripcion);
             mantenimientos.add(mantenimiento);
 
             linea = in2.readLine();
@@ -223,6 +244,8 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    // Se usa dentro del submenu "menu2()" (en la opcion 1), donde se usa las 2 variables la primera es "i" donde es el indice de las listas y es igual a 0 desde el principio de la funcion
+    // y la otra veriable llamado "pagina", que empieza en 1, donde es la pagina que se mostrara dentro de las listas de los vehiculos.
     @Override
     public void verVehiculos() {
         int i = 0;
@@ -476,6 +499,9 @@ public class SistemaImpl implements Sistema {
         }
     }
 
+    // Se usa dentro del submenu del menu2() (En la opcion 2), donde hay 3 variables las cuales son esta: "i" es el indice de la lista "vehiculos"
+    // , despues el segundo es "pagina" donde es la pagina que se hara cada 1 vehiculo que se busque y el tercero es "i2" donde es el indice para mostrar
+    // el numero del vehiculo que se muestra dentro de la opcion
     @Override
     public void buscarPorTipo() {
         int pagina = 1;
@@ -561,7 +587,8 @@ public class SistemaImpl implements Sistema {
             }
         }
     }
-
+    // Se usa dentro del submenu de menu2() (en la opcion 3), donde hay  1 variable que es el verificador que empiza en 0, este verificador
+    // se usa para ver si llego a la parte que se busco el vehiculo por su ID, sino se mostrara el mensaje que no se encontro el vehiculo.
     @Override
     public void buscarPorId() {
         int verificador = 0;
@@ -585,6 +612,8 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    // Se usa en el submenu "menu3()" (en la opcion 1), ahi se pregunta por la id del vehiculo y se busca esa id en los mantenimientos que se hizo en ese vehiculo
+    // mostrando las fehcas, tipo de mantenimiento y descripcion.
     @Override
     public void mostrarHistorialVehiculo() {
         System.out.println("¿Cual es el ID del vehiculo?");
@@ -600,6 +629,8 @@ public class SistemaImpl implements Sistema {
         }
     }
 
+    // Se usa en la opcion 3 del menu principal y se agrega un vehiculo nuevo en la lista de vehiculos, donde tambien se agrega al
+    // archivo "vehiculos.csv" cuando se salio del programa en la opcion salir
     @Override
     public void agregarVehiculo() {
         System.out.println("¿De que marca es el automovil?");
@@ -658,9 +689,11 @@ public class SistemaImpl implements Sistema {
 
     }
 
+    // Se usa en la opcion 4 del menu principal, donde se agrega en la lista "mantenimientos" y se agregar al archivo
+    // de "mantenimiento.csv" cuando se use la opcion salir.
     @Override
     public void agregarMantenimineto() {
-        int idMan = mantenimientos.size();
+        int idMan = mantenimientos.size() + 1;
         System.out.println(idMan);
         System.out.println("¿Cual es el Id del vehiculo que se quiere hacer el mantenimiento?");
         int idVehiculo = opcion.nextInt();
@@ -703,6 +736,7 @@ public class SistemaImpl implements Sistema {
     public void verBoletas() {
 
     }
+
 
     @Override
     public void salir() {
