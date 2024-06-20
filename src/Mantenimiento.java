@@ -1,8 +1,9 @@
-//  La clase llamada mantenimniento que es heredado por la clase llamada IdVehiculo
+/**
+ * Es la clase que deja crear los vehiculos del programa y es la clase hija de la clase IdVehiculo
+ */
 
 public class Mantenimiento extends IdVehiculo{
 
-    // Los atributos de la clase mantenimiento los cuales son: idMantenimiento, Id, fecha, tipoMantenimiento, descripcion
     private int idMantenimiento;
 
     private String fecha;
@@ -10,8 +11,6 @@ public class Mantenimiento extends IdVehiculo{
     private String tipoMantenimiento;
 
     private String descripcion;
-
-    // El constructor de la clase Mantenimiento
 
     /**
      * Es el constructor de la clase mantenimiento para poder instancear
@@ -30,8 +29,6 @@ public class Mantenimiento extends IdVehiculo{
         this.descripcion = descripcion;
     }
 
-    // Se usa para obtener el id del mantenimiento que se instanceo
-
     /**
      * Es el get del id del mantenimiento
      * @return retorna el id del mantenimiento
@@ -40,25 +37,24 @@ public class Mantenimiento extends IdVehiculo{
         return idMantenimiento;
     }
 
-    // Se usa para obtener la fecha de un matenimiento que se instanceo
 
     /**
      * Es el get de la fecha del mantenimiento
      * @return retorna la fecha del mantenimiento
      */
+
     public String getFecha(){
         return fecha;
     }
-    // Se usa para obtener el tipo de mantenimiento que se instanceo
 
     /**
      * Es el get del tipo de mantenimiento
      * @return retorna el tipo de mantenimiento que hay
      */
+
     public String getTipoMantenimiento(){
         return tipoMantenimiento;
     }
-    // Se usa para obtener la descripcion que se instanceo
 
     /**
      * Es el get de la descripcion del mantenimiento

@@ -1,20 +1,16 @@
-
-// Las importaciones de las librerias para poder hacer el codigo, por ejemplo edu.pricenton.cs.stdlib.In es para leer los archivos de vehiculos.csv y mantenimientos.csv,
-// despues el java.util.ArrayList es para crear las listas de las clases vehiculo y mantenimiento llamadas "vehicul0s" y "mantenimiento" despues el java.util.Scanner es para
-// crear el Scanner llamado opcion donde los usuarios pueden esccribir las opciones
 import edu.princeton.cs.stdlib.In;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// clase del sistema llamado "SistemaImpl" donde se usaron las implementaciones de la interface llamada "Sistema"
 public class SistemaImpl implements Sistema {
 
-    // Los atributos privados de la clase SistemaImpl, los cuales son 2 listas de las clases "Vehiculo" y "Mantenimiento"
     private ArrayList<Vehiculo> vehiculos;
 
     private ArrayList<Mantenimiento> mantenimientos;
 
-    // El constructor de la clase SistemaImpl, donde crea las ArrayList de las listas vehiculos y mantenimientos.
+    /**
+     * Es el constructor de la clase SistemaImpl que deja crear y cambiar las ArrayList que son "vehiculos" y "mantenimientos"
+     */
     public SistemaImpl() {
         this.vehiculos = new ArrayList<>();
         this.mantenimientos = new ArrayList<>();
@@ -23,15 +19,30 @@ public class SistemaImpl implements Sistema {
     // La creacion del Scanner llamado "opcion"
     Scanner opcion = new Scanner(System.in);
 
-    // menu(): Esto hace que se pueda mostrar el menu principal del programa, con sus opciones, con la carga de archivos de los archivos
-    // "vehiculos.csv"y "mantenimientos.csv", tambien que se activa la funcion "mensajeMenu1()", donde se usa el Scanner "opcion" y con la salida del programa.
-    // que guarda los nuevos cambios de los archivos y se termina
+    /**
+     * Es el menu principal del programa
+     */
     public void menu() {
+
+        // Se cargar los archivos.csv en el momento que se activa el programa.
+
         cargarVehiculos();
         cargarMantenimientos();
+
+        // Se abre la funcion mensajeMenu1 que muestra el titulo y las opciones del programa
+
         mensajeMenu1();
+
+        // Se abre la opcion para elegir (son numeros del 1 al 7
+
         String pregunta = opcion.nextLine();
+
+        // Se abre el ciclo while para que no se termine el programa
+
         while (true){
+
+            // El switch que deja ver que opcion eligio la persona y la busca por cada caso
+
             switch(pregunta){
                 case "1" :
 
@@ -75,9 +86,11 @@ public class SistemaImpl implements Sistema {
 
     }
 
-    // Se usa mensajeMenu1() en la parte de menu() para mostrar las opciones que dentro del menu principal
     @Override
     public void mensajeMenu1() {
+
+        // Mensajes para el menu principal
+
         System.out.println("------{ Bienvenido a AutoFleet }-------");
         System.out.println("1.- Ver vehiculos.");
         System.out.println("2.- Ver historial de mantenimiento.");
@@ -89,18 +102,28 @@ public class SistemaImpl implements Sistema {
         System.out.println("Elija una opcion: ");
     }
 
-    // Se usa dentro del switch (en el "case 1"), donde muestra las opciones del submenu, dejando al usuario elegir cada una de las opciones
-    // que hay dentro del programa y las opcines son 4, ahi la ultima opcion es volver al menu principal
     @Override
     public void menu2() {
+
+        // Titulo y opciones(que son 4 opciones) para el submenu de la opcion 1 (Ver vehiculos).
+
         System.out.println("-------( Ver vehiculos )-------");
         System.out.println("1.- Listar todos los vehiculos.");
         System.out.println("2.- Buscar vehiculo por tipo.");
         System.out.println("3.- Buscar vehiculo por ID.");
         System.out.println("4.- Volver al menu pricipal.");
         System.out.println("Elija una opcion: ");
+
+        // Se abre la opcion para dejar que la persona elija la opcion
+
         String pregunta2 = opcion.nextLine();
+
+        // Se inicia el ciclo while para que no termine esa parte del programa
+
         while (true){
+
+            // El segundo switch que es para que vea que opcion elijio la persona
+
             switch (pregunta2){
                 case "1" :
 
@@ -134,16 +157,25 @@ public class SistemaImpl implements Sistema {
 
     }
 
-    // Se usa dentro del switch(en el "case 2"), donde muestra las opciones, dejando al usuario elegir la opcion que quiera
-    // , donde hay 2 opciones, ahi a ultima es volver al menu principal
     @Override
     public void menu3() {
+
+        // Titulo y opciones(que son 2 opciones) para el submenu de la opcion 2 (Ver historial de mantenimiento)
         System.out.println("-------( Ver historial de mantenimiento )-------");
         System.out.println("1.- Mostrar historial por vehiculo.");
         System.out.println("2.- Volver al menu principal.");
         System.out.println("Elija una opcion: ");
+
+        // Se inicia la opcion para dejar que la persona elija la opcion del submenu
+
         String pregunta3 = opcion.nextLine();
+
+        // Se inicia un ciclo casi infinito para que no termine el programa
+
         while (true){
+
+            // El tercer switch que ve que opcion elijio la persona y la busca dentro de los case
+
             switch (pregunta3){
 
                 case "1" :
@@ -165,17 +197,26 @@ public class SistemaImpl implements Sistema {
 
     }
 
-    // Se usa dentro del switch(en el "case 6"), donde muestra las opciones que hay, dejando al usuario que pueda elegir esas opciones
-    // tambien hay 2 opciones, ahi en la ultima opcion es volver al menu principal
     @Override
     public void menu4() {
+
+        // Titulo y opciones(que son 2) para el submenu de la opcion 6(Ver boletas)
 
         System.out.println("-------( Ver boletas )-------");
         System.out.println("1.- Listado de todas las boletas.");
         System.out.println("2.- Volver al menu principal.");
         System.out.println("Elija una opcion: ");
+
+        // Se activa la opcion para dejar que la persona elija las 2 opciones que hay
+
         String pregunta4 = opcion.nextLine();
+
+        // Se activa el while para que no termine el programa
+
         while (true){
+
+            // el cuarto switch para que busque la opcion que elijio la persona y la busque dentro de los case
+
             switch (pregunta4){
 
                 case "1" :
@@ -197,15 +238,27 @@ public class SistemaImpl implements Sistema {
 
     }
 
-    //Se usa en el menu principal en el momento que se inicia el programa, ahi se usa la funcion cargarVehiculos para cargar el archivo vehiculos.csv
     @Override
     public void cargarVehiculos() {
+
+        // Se inicia la cargar de los vehiculos
+
         In in = new In ("vehiculos.csv");
+
+        // Lee la linea del archivo
+
         String linea = in.readLine();
+
+        // Se inicia el ciclo para que lea hasta la ultima linea del archivo vehiculos.csv
 
         while(linea != null) {
 
+            // Se crear campos para que pueda separa las partes del archivo que son como ","
+
             String[] campos = linea.split(",");
+
+            // Se inicia la separacion de los archivos.
+
             int id = Integer.parseInt(campos[0]);
             String marca = campos[1];
             String modelo = campos[2];
@@ -214,42 +267,67 @@ public class SistemaImpl implements Sistema {
             String tipo = campos[5];
             String atributo1 = campos[6];
             String atributo2 = campos[7];
+
+            // Se instancia la clase vehiculo para crear y agregarlo a la lista vehiculos
+
             Vehiculo vehiculo1 = new Vehiculo(id,marca,modelo,anioFabricacion,kilometraje,tipo,atributo1,atributo2);
             vehiculos.add(vehiculo1);
+
+            // vuelve a leer la siguiente linea del archivo
 
             linea = in.readLine();
         }
 
     }
 
-    // Se usa en el menu pricipal en el momento que se inicia el programa, donde se carga el archivo de mantenimientos.csv.
-
     @Override
     public void cargarMantenimientos() {
+
+        // Se iniciar la lectura del archivo "mantenimientos.csv"
+
         In in2 = new In ("mantenimientos.csv");
 
+        // Se empieza a leer la primera linea del archivo
+
         String linea = in2.readLine();
+
+        // Se inicia el ciclo while para que empiece a leer el archivo hasta que no haya vacio
+
         while (linea != null){
+
+            // Se crea campos para que pueda separar las partes del archivos que esten con ","
+
             String[] campos = linea.split(",");
+
+            // Se crea las partes del archivo
+
             int idMantenimiento = Integer.parseInt(campos[0]);
             int idVehiculo = Integer.parseInt(campos[1]);
             String fecha = campos[2];
             String tipoMantenimiento = campos[3];
             String descripcion = campos[4];
+
+            // Se instancia la clase mantenimiento para crear un mantenimiento y agregarlo a la lista de matenimientos
+
             Mantenimiento mantenimiento = new Mantenimiento(idMantenimiento,idVehiculo  ,fecha,tipoMantenimiento,descripcion);
             mantenimientos.add(mantenimiento);
 
+            // Empiza a leer la siguiente lista
             linea = in2.readLine();
         }
 
     }
-
-    // Se usa dentro del submenu "menu2()" (en la opcion 1), donde se usa las 2 variables la primera es "i" donde es el indice de las listas y es igual a 0 desde el principio de la funcion
-    // y la otra veriable llamado "pagina", que empieza en 1, donde es la pagina que se mostrara dentro de las listas de los vehiculos.
     @Override
     public void verVehiculos() {
+
+        // Se crean 2 cosas para hacer la primera opcion(Ver todos los vehiculos) del primer submenu(Ver vehiculos), los cuales son "i" que es el indice para mostrar cada atributo de la lista vehiculos
+        // y "pagina" que sera el numero de la pagina que se mostrara en esa opcion
+
         int i = 0;
         int pagina = 1;
+
+        // Se empieza a mostrar el numero del vehiculo dentro de la lista, sus atributos( hasta el cuarto vehiculo)  y su pagina
+
         System.out.println("--------- Vehiculo " + (i + 1) + ") ---------");
         System.out.println(vehiculos.get(i).getId());
         System.out.println(vehiculos.get(i).getMarca());
@@ -295,16 +373,33 @@ public class SistemaImpl implements Sistema {
         System.out.println("----------------------------------");
         System.out.println("Pagina " + (pagina));
 
+        // Subopciones de ver si quiere ir a la siguiente pagina, a la anterior pagina o salir de la opccion
+
         System.out.println("1.- Siguiente pagina.");
         System.out.println("2.- Pagina anterior.");
         System.out.println("3.- Salir.");
         System.out.println("Elija una opcion: ");
+
+        // Se activa la opcion para que pueda elegir la persona
+
         String pregunta5 = opcion.nextLine();
+
+        //Se inicia el ciclo para que empiece a seguir el programa con la opcion que se eligio
+
         while (true){
 
+            // Se ponen las condiciones para ver si a elegido cada una de las opciones que hay
+
             if (pregunta5.equals("1")) {
+
+                // Se aumenta en 4 en 4 el indice "i" para que siga con la opcion
+
                 i = i + 4;
+
+                // Se aumenta en 1 en 1 la pagina
                 pagina = pagina + 1;
+
+                // Las 2 verificaciones que tiene para ver si esta dentro de las lista en las 4 partes aumentadas
                 if (i >= 0) {
                     if (i < vehiculos.size()) {
                         System.out.println("------- ( Vehiculo " + (i + 1) + ") -------");
@@ -395,8 +490,17 @@ public class SistemaImpl implements Sistema {
             }
 
             else if(pregunta5.equals("2")) {
+
+                // Se baja en 4 en 4 para que pueda seguir con la pagina
+
                 i = i - 4;
+
+                // Se baja la pagina en 1 en 1 para que pueda bajar la pagina
+
                 pagina = pagina - 1;
+
+                // Las 2 verificaciones para ver si esta dentro de la lista aunque se ponga o se quite un vehiculo
+
                 if (i >= 0) {
                     if (i < vehiculos.size()){
                         System.out.println("------- ( Vehiculo " + (i + 1) + ") -------");
@@ -498,22 +602,37 @@ public class SistemaImpl implements Sistema {
             pregunta5 = opcion.nextLine();
         }
     }
-
-    // Se usa dentro del submenu del menu2() (En la opcion 2), donde hay 3 variables las cuales son esta: "i" es el indice de la lista "vehiculos"
-    // , despues el segundo es "pagina" donde es la pagina que se hara cada 1 vehiculo que se busque y el tercero es "i2" donde es el indice para mostrar
-    // el numero del vehiculo que se muestra dentro de la opcion
     @Override
     public void buscarPorTipo() {
+
+        // Se crear 3 cosas para poder hacer la opcion 2 (ver vehiculo por tipo), dentro del submenu (ver vehiculo) los cuales son:
+        // "pagina" que es la pagina del vehiculo que se busco, donde empieza en 1, "i" que es el primer indice para las lista vehiculos, donde empieza en 0,
+        // y "i2" para el numero del vehiculo que hay, donde empieza en 0
+
         int pagina = 1;
         int i = 0;
         int i2 = 1;
+
+        // Se hace la pregunta de cual es el tipo del vehiculo que se quiere buscar
+
         System.out.println("¿Cual es el tipo del vehiculo?");
+
+        //Se activa la opcion para que pueda escribir el tipo del vehiculo
+
         String tipo = opcion.nextLine();
+
+        // Se hace la condicion para cada vehiculo que hay en el programa
+
         if(tipo.equalsIgnoreCase("Automóvil")){
+
+            // Se inicia un ciclo para poder elergir cuales de las subopciones quiere la persona
+
             while(true){
+
                 System.out.println("1.- Siguiente Pagina.");
                 System.out.println("2.- Pagina anterior.");
                 System.out.println("3.- Salir.");
+
                 String pregunta6 = opcion.nextLine();
 
                 if (pregunta6.equals("1")){
@@ -587,14 +706,25 @@ public class SistemaImpl implements Sistema {
             }
         }
     }
-    // Se usa dentro del submenu de menu2() (en la opcion 3), donde hay  1 variable que es el verificador que empiza en 0, este verificador
-    // se usa para ver si llego a la parte que se busco el vehiculo por su ID, sino se mostrara el mensaje que no se encontro el vehiculo.
     @Override
     public void buscarPorId() {
+
+        // Se crean 1 cosa para poder saber si se cumplio la busqueda del vehiculo por su id, la cual es "verificador" que empieza en 0
+
         int verificador = 0;
+
         System.out.println("¿Cual es el ID del vehiculo?");
+
+        // Se inicia la pregunta para que la persona pueda elegir el id que quiera poner
+
         int pregunta7 = opcion.nextInt();
+
+        // Se inicia el ciclo for para que pueda buscar el id que se escribio en la consola
+
         for (int i = 0;i < vehiculos.size(); i++){
+
+            // La condicion que es para ver si se llego a buscar el id del vehiculo dentro del archivo
+
             if(pregunta7 == vehiculos.get(i).getId()){
                 verificador = verificador + 1;
                 System.out.println(vehiculos.get(i).getMarca());
@@ -612,14 +742,26 @@ public class SistemaImpl implements Sistema {
 
     }
 
-    // Se usa en el submenu "menu3()" (en la opcion 1), ahi se pregunta por la id del vehiculo y se busca esa id en los mantenimientos que se hizo en ese vehiculo
-    // mostrando las fehcas, tipo de mantenimiento y descripcion.
     @Override
     public void mostrarHistorialVehiculo() {
+
+        // Se crea 1 cosa para que pueda verificar si se pudo buscar los mantenimiento del vehiculo
+
+        int verificador2 = 0;
         System.out.println("¿Cual es el ID del vehiculo?");
+
+        // Se inicia la pregunta para que la persona pueda escribir el id para buscar los mantenimientos que se hicieron con ese id de vehiculo
+
         int pregunta8 = opcion.nextInt();
+
+        // Se inicio el ciclo for para que pueda buscar el id del vehiculo
+
         for (int i = 0; i < mantenimientos.size(); i++){
+
+            // La condicion que deja ver si se pudo encontrar el id del vehiculo
+
             if(mantenimientos.get(i).getId() == pregunta8){
+                verificador2 = verificador2 + 1;
                 System.out.println("Historial ");
                 System.out.println(mantenimientos.get(i).getFecha());
                 System.out.println(mantenimientos.get(i).getTipoMantenimiento());
@@ -627,12 +769,17 @@ public class SistemaImpl implements Sistema {
                 System.out.println("---------------------------------------");
             }
         }
+
+        if (verificador2 == 0){
+            System.out.println("No se encontro los mantenimientos de ese vehiculo");
+        }
     }
 
-    // Se usa en la opcion 3 del menu principal y se agrega un vehiculo nuevo en la lista de vehiculos, donde tambien se agrega al
-    // archivo "vehiculos.csv" cuando se salio del programa en la opcion salir
     @Override
     public void agregarVehiculo() {
+
+        // Se hace las preguntas con su condiciones si hacen bien las respuesta que se escribieron
+
         System.out.println("¿De que marca es el automovil?");
         String marca = opcion.nextLine();
         if(!marca.equals("")){
@@ -656,6 +803,9 @@ public class SistemaImpl implements Sistema {
                                 String atributo2 = opcion.nextLine();
                                 if(!atributo2.equals("")){
                                     int id = vehiculos.size() + 1;
+
+                                    // Instanceo del vehiculo para que se pueda agregar el vehiculo a la lista de vehiculos
+
                                     Vehiculo vehiculo2 = new Vehiculo(id,marca,modelo,anios,kilometraje,tipo,atributo1,atributo2);
                                     vehiculos.add(vehiculo2);
                                     System.out.println("Se agrego el vehiculo al sistema");
@@ -689,11 +839,11 @@ public class SistemaImpl implements Sistema {
         }
 
     }
-
-    // Se usa en la opcion 4 del menu principal, donde se agrega en la lista "mantenimientos" y se agregar al archivo
-    // de "mantenimiento.csv" cuando se use la opcion salir.
     @Override
     public void agregarMantenimineto() {
+
+        // Se inician las preguntas con sus condiciones para ver si se escribio bien las preguntas para poder agregar el mantenimiento a la lista de mantenimientos
+
         int idMan = mantenimientos.size() + 1;
         System.out.println(idMan);
         System.out.println("¿Cual es el Id del vehiculo que se quiere hacer el mantenimiento?");
@@ -701,6 +851,7 @@ public class SistemaImpl implements Sistema {
         if (idVehiculo >= 1 && idVehiculo <= vehiculos.size()){
             System.out.println("¿Cual es la fecha del mantenimiento?");
             String fecha = opcion.nextLine();
+            fecha = opcion.nextLine();
             if(fecha.contains("aaaa-mm-dd")){
                 System.out.println("¿Que tipo de mantenimiento se hizo?");
                 String mantenimiento = opcion.nextLine();
@@ -708,6 +859,9 @@ public class SistemaImpl implements Sistema {
                     System.out.println("¿Cual es la descripcion del vehiculo?(realizado correctamente, sin problemas, requiere seguimiento, reemplazo exitoso).");
                     String descripcion = opcion.nextLine();
                     if(descripcion.equals("realizado correctamente") || descripcion.equals("sin problemas") || descripcion.equals("requiere seguimiento") || descripcion.equals("reemplazo exitoso")){
+
+                        // Se instacia la clase Mantenimiento y se agrega a la lista de mantenimientos (con su mensaje)
+
                         Mantenimiento mantenimiento1 = new Mantenimiento (idMan,idVehiculo,fecha,mantenimiento,descripcion);
                         mantenimientos.add(mantenimiento1);
                         System.out.println("Se agrego el mantenimiento al sistema");

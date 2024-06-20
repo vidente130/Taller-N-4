@@ -1,7 +1,7 @@
-// La clase vehiculo que se hereda de la clase IdVehiculo
+/**
+ * Esta es la clase que crea los vehiculos del programa y ademas que es la clase hija de la clase IdVehiculo
+ */
 public class Vehiculo extends IdVehiculo{
-
-    // Los atributos de la clase Vehiculos los cuales son: marca, modelo, anioFabricacion, kilometraje, tipoVehiculo, atributo1 y atributo2
     private String marca;
 
     private String modelo;
@@ -39,8 +39,6 @@ public class Vehiculo extends IdVehiculo{
         this.atributo2 = atributo2;
     }
     //  getters de la clase vehiculo
-
-    // Se usa para obtener la marca del vehiculo que se instanceo
     /**
      * Es el get de marca
      * @return retorna la marca
@@ -49,8 +47,6 @@ public class Vehiculo extends IdVehiculo{
 
         return marca;
     }
-
-    // Se usa para tener el modelo del vehiculo que se instanceo
 
     /**
      * Es el get del modelo
@@ -61,8 +57,6 @@ public class Vehiculo extends IdVehiculo{
         return modelo;
     }
 
-    // Se usa para obtener el año de fabricacion del vehiculo que se instanceo
-
     /**
      * Es el get del año de fabricacion
      * @return retorna el año de fabricacion del vehiculo
@@ -71,8 +65,6 @@ public class Vehiculo extends IdVehiculo{
 
         return anioFabricacion;
     }
-
-    // Se usa para obtener el kilometraje del vehiculo que se instanceo
 
     /**
      * Es el get del kilometraje
@@ -83,8 +75,6 @@ public class Vehiculo extends IdVehiculo{
         return kilometraje;
     }
 
-    // Se usa para tener el tipo de vehiculo que se instanceo
-
     /**
      * Es el get del tipo de vehiculo
      * @return retorna el tipo de vehiculo
@@ -94,8 +84,6 @@ public class Vehiculo extends IdVehiculo{
         return tipoVehiculo;
     }
 
-    // Se usa para obtener el primer atributo del vehiuclo que se instanceo
-
     /**
      * Es el get del primer atributo
      * @return retorna el primer atributo del vehiculo
@@ -104,8 +92,6 @@ public class Vehiculo extends IdVehiculo{
 
         return atributo1;
     }
-
-    // Se usa para obtener el segundo atributo del vehiculo que se instanceo
 
     /**
      * Es el get del segundo atributo

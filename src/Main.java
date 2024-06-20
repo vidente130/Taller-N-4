@@ -1,3 +1,6 @@
+/**
+ * Es el main principal del programa y tambien parte del camino para llegar al menu
+ */
 public class Main {
     public static void main(String[] args) {
 
