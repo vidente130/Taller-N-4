@@ -11,12 +11,15 @@ public class SistemaImpl implements Sistema {
 
     private ArrayList<Mantenimiento> mantenimientos;
 
+    private ArrayList<Boleta> boletas;
+
     /**
      * Es el constructor de la clase SistemaImpl que deja crear y cambiar las ArrayList que son "vehiculos" y "mantenimientos"
      */
     public SistemaImpl() {
         this.vehiculos = new ArrayList<>();
         this.mantenimientos = new ArrayList<>();
+        this.boletas = new ArrayList<>();
     }
 
     // La creacion del Scanner llamado "opcion"
@@ -1148,11 +1151,45 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void generarBoleta() {
+        int id = 1;
+        id += boletas.size();
+        String marca = "";
+        String modelo = "";
+        String anioFabricacion = "";
+        String kilometraje = "";
+        String tipoVehiculo = "";
+        String atributo1 = "";
+        String atributo2 = "";
+
+        System.out.println("¿cual es el id del vehiculo que quiere? ");
+        String idVehiculo = opcion.nextLine();
+
+        for (int i = 0; i< vehiculos.size();i++){
+            if (vehiculos.get(i).getId() == Integer.parseInt(idVehiculo)){
+                marca = vehiculos.get(i).getMarca();
+                modelo = vehiculos.get(i).getModelo();
+                anioFabricacion = String.valueOf(vehiculos.get(i).getAnioFabricacion());
+                kilometraje = String.valueOf(vehiculos.get(i).getKilometraje());
+                tipoVehiculo = vehiculos.get(i).getTipoVehiculo();
+                atributo1 = vehiculos.get(i).getAtributo1();
+                atributo2 = vehiculos.get(i).getAtributo2();
+                break;
+            }
+
+        }
+
+        String vehicilo = idVehiculo + "," +marca + "," + modelo + "," + anioFabricacion + "," + kilometraje + "," + tipoVehiculo + "," + atributo1 + "," + atributo2;
+
+        System.out.println(vehicilo);
+
+
+
 
     }
 
     @Override
     public void verBoletas() {
+
 
     }
 
