@@ -7,11 +7,13 @@ skin rose
 entity cliente{
 *rut
 *nombre
+*apellido
 }
 
 entity vendedor {
 *rut
 *nombre
+*apellido
 *anios de experiencia
 }
 
@@ -35,6 +37,16 @@ entity boleta{
 *fecha de emision
 *precio total
 }
+
+vendedor"1" --"1" boleta: > Emite
+
+vendedor"1" -- "1..*" cliente: > Atiende
+
+boleta"1" -- "1"cliente: Recibe <
+
+cliente"1" --"1..*" vehiculo: > Compra
+
+vehiculo "1" -- "1..*" mantenimiento: > Es enviado a
 
 
 
