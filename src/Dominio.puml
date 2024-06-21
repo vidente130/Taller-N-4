@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+left to right direction
+skin rose
+
+entity cliente{
+*rut
+*nombre
+}
+
+entity vendedor {
+*rut
+*nombre
+}
+
+entity vehiculo{
+*id
+*marca
+*anio de fabricacion
+*kilometraje
+*tipo de vehiculo
+}
+
+entity boleta{
+
+}
+
+
+
+@enduml

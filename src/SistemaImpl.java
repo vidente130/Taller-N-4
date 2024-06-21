@@ -1,4 +1,6 @@
 import edu.princeton.cs.stdlib.In;
+import edu.princeton.cs.stdlib.Out;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -1382,6 +1384,45 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void salir() {
+        Out out = new Out("vehiculos.csv");
+
+        for (int i = 0; i < vehiculos.size(); i++) {
+            Vehiculo vehiculo = vehiculos.get(i);
+
+            String vehiculoEnEscrito = vehiculos.get(i).getId() + "," + vehiculos.get(i).getMarca()+ "," + vehiculos.get(i).getModelo()+ "," + vehiculos.get(i).getAnioFabricacion()+ "," + vehiculos.get(i).getKilometraje()+ "," + vehiculos.get(i).getTipoVehiculo()+ "," + vehiculos.get(i).getAtributo1() + "," + vehiculos.get(i).getAtributo2() ;
+
+            out.println(vehiculoEnEscrito);
+
+
+        }
+
+        Out out1 = new Out("mantenimientos.csv");
+        for (int j = 0; j< mantenimientos.size() ;j++){
+
+            Mantenimiento mantenimiento = mantenimientos.get(j);
+
+            String mantenimientoEnEscrito = mantenimientos.get(j).getIdMantenimiento() +"," + mantenimientos.get(j).getId() + "," + mantenimientos.get(j).getFecha() +"," + mantenimientos.get(j).getTipoMantenimiento() + "," + mantenimientos.get(j).getDescripcion();
+
+            out1.println(mantenimientoEnEscrito);
+        }
+
+        Out out2 = new Out("boletas.csv");
+        for (int j = 0; j< boletas.size() ;j++){
+
+
+            Boleta boleta = boletas.get(j);
+
+            String boletaEnEscrito = boletas.get(j).getId() + "," +boletas.get(j).getVehiculo() + "," + boletas.get(j).getMantenimiento() + "," + boletas.get(j).getFechaEmision() + "," + boletas.get(j).getPagaTotal()  ;
+
+            out2.println(boletaEnEscrito);
+
+
+
+        }
+
+
+
+
 
 
     }
