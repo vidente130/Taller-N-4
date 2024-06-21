@@ -2,6 +2,20 @@
 'https://plantuml.com/sequence-diagram
 left to right direction
 skin rose
+
+class Boleta{
+-id: int
+-fechaEmision: date
+-pagaTotal: double
++Boleta(id: int, vehiculo: Vehiculo, mantenimiento: Mantenimiento, fechaEmision: date, pagaTotal: double)
++getId(): int
++getFechaEmision(): date
++getVehiculo(): Vehiculo
++getMantenimiento(): Mantenimiento
++getPagaTotal(): double
+}
+
+
 class IdVehiculo{
     -id: int
     +IdVehiculo(id: int)
@@ -66,6 +80,10 @@ Mantenimiento --|> IdVehiculo: -id: int
 SistemaImpl ..|> Sistema: implementa
 Vehiculo --> SistemaImpl: -vehiculos: ArrayList<Vehiculo>
 Mantenimiento --> SistemaImpl: -mantenimientos: ArrayList<Mantenimiento>
+
+Boleta <-- Vehiculo: -vehiculo: Vehiculo
+Boleta <-- Mantenimiento: -mantenimiento: Mantenimiento
+Boleta --> SistemaImpl: -boletas: ArrayList<Boleta>
 
 
 @enduml
