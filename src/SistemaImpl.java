@@ -1,5 +1,6 @@
 import edu.princeton.cs.stdlib.In;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -237,7 +238,7 @@ public class SistemaImpl implements Sistema {
 
             System.out.println("-------( Ver boletas )-------");
             System.out.println("1.- Listado de todas las boletas.");
-            System.out.println("2.- Volver al menu principal.0");
+            System.out.println("2.- Volver al menu principal.");
             System.out.println("Elija una opcion: ");
             pregunta4 = opcion.nextLine();
         }
@@ -334,50 +335,54 @@ public class SistemaImpl implements Sistema {
 
         // Se empieza a mostrar el numero del vehiculo dentro de la lista, sus atributos( hasta el cuarto vehiculo)  y su pagina
 
-        System.out.println("--------- Vehiculo " + (i + 1) + ") ---------");
-        System.out.println(vehiculos.get(i).getId());
-        System.out.println(vehiculos.get(i).getMarca());
-        System.out.println(vehiculos.get(i).getModelo());
-        System.out.println(vehiculos.get(i).getAnioFabricacion());
-        System.out.println(vehiculos.get(i).getKilometraje());
-        System.out.println(vehiculos.get(i).getTipoVehiculo());
-        System.out.println(vehiculos.get(i).getAtributo1());
-        System.out.println(vehiculos.get(i).getAtributo2());
-        System.out.println("-------------------------------");
+        if(i >= 0) {
+            System.out.println("---------( Vehiculo " + (i + 1) + ") ---------");
+            System.out.println(vehiculos.get(i).getId());
+            System.out.println(vehiculos.get(i).getMarca());
+            System.out.println(vehiculos.get(i).getModelo());
+            System.out.println(vehiculos.get(i).getAnioFabricacion());
+            System.out.println(vehiculos.get(i).getKilometraje());
+            System.out.println(vehiculos.get(i).getTipoVehiculo());
+            System.out.println(vehiculos.get(i).getAtributo1());
+            System.out.println(vehiculos.get(i).getAtributo2());
+            System.out.println("-------------------------------");
 
-        System.out.println("--------- Vehiculo " + (i + 2) + ") ---------");
-        System.out.println(vehiculos.get(i + 1).getId());
-        System.out.println(vehiculos.get(i + 1).getMarca());
-        System.out.println(vehiculos.get(i + 1).getModelo());
-        System.out.println(vehiculos.get(i + 1).getAnioFabricacion());
-        System.out.println(vehiculos.get(i + 1).getKilometraje());
-        System.out.println(vehiculos.get(i + 1).getTipoVehiculo());
-        System.out.println(vehiculos.get(i + 1).getAtributo1());
-        System.out.println(vehiculos.get(i + 1).getAtributo2());
-        System.out.println("--------------------------------");
+            System.out.println("---------( Vehiculo " + (i + 2) + ") ---------");
+            System.out.println(vehiculos.get(i + 1).getId());
+            System.out.println(vehiculos.get(i + 1).getMarca());
+            System.out.println(vehiculos.get(i + 1).getModelo());
+            System.out.println(vehiculos.get(i + 1).getAnioFabricacion());
+            System.out.println(vehiculos.get(i + 1).getKilometraje());
+            System.out.println(vehiculos.get(i + 1).getTipoVehiculo());
+            System.out.println(vehiculos.get(i + 1).getAtributo1());
+            System.out.println(vehiculos.get(i + 1).getAtributo2());
+            System.out.println("--------------------------------");
 
-        System.out.println("--------- Vehiculo " + (i + 3) + ") ----------");
-        System.out.println(vehiculos.get(i + 2).getId());
-        System.out.println(vehiculos.get(i + 2).getMarca());
-        System.out.println(vehiculos.get(i + 2).getModelo());
-        System.out.println(vehiculos.get(i + 2).getAnioFabricacion());
-        System.out.println(vehiculos.get(i + 2).getKilometraje());
-        System.out.println(vehiculos.get(i + 2).getTipoVehiculo());
-        System.out.println(vehiculos.get(i + 2).getAtributo1());
-        System.out.println(vehiculos.get(i + 2).getAtributo2());
-        System.out.println("---------------------------------");
+            System.out.println("---------( Vehiculo " + (i + 3) + ") ----------");
+            System.out.println(vehiculos.get(i + 2).getId());
+            System.out.println(vehiculos.get(i + 2).getMarca());
+            System.out.println(vehiculos.get(i + 2).getModelo());
+            System.out.println(vehiculos.get(i + 2).getAnioFabricacion());
+            System.out.println(vehiculos.get(i + 2).getKilometraje());
+            System.out.println(vehiculos.get(i + 2).getTipoVehiculo());
+            System.out.println(vehiculos.get(i + 2).getAtributo1());
+            System.out.println(vehiculos.get(i + 2).getAtributo2());
+            System.out.println("---------------------------------");
 
-        System.out.println("--------- Vehiculo " + (i + 4) + ") ----------");
-        System.out.println(vehiculos.get(i + 3).getId());
-        System.out.println(vehiculos.get(i + 3).getMarca());
-        System.out.println(vehiculos.get(i + 3).getModelo());
-        System.out.println(vehiculos.get(i + 3).getAnioFabricacion());
-        System.out.println(vehiculos.get(i + 3).getKilometraje());
-        System.out.println(vehiculos.get(i + 3).getTipoVehiculo());
-        System.out.println(vehiculos.get(i + 3).getAtributo1());
-        System.out.println(vehiculos.get(i + 3).getAtributo2());
-        System.out.println("----------------------------------");
-        System.out.println("Pagina " + (pagina));
+            System.out.println("----------( Vehiculo " + (i + 4) + ") ----------");
+            System.out.println(vehiculos.get(i + 3).getId());
+            System.out.println(vehiculos.get(i + 3).getMarca());
+            System.out.println(vehiculos.get(i + 3).getModelo());
+            System.out.println(vehiculos.get(i + 3).getAnioFabricacion());
+            System.out.println(vehiculos.get(i + 3).getKilometraje());
+            System.out.println(vehiculos.get(i + 3).getTipoVehiculo());
+            System.out.println(vehiculos.get(i + 3).getAtributo1());
+            System.out.println(vehiculos.get(i + 3).getAtributo2());
+            System.out.println("----------------------------------");
+            System.out.println("Pagina " + (pagina));
+        }
+        System.out.println("No hay vehiculo.");
+        System.out.println("-----------------------------------");
 
         // Subopciones de ver si quiere ir a la siguiente pagina, a la anterior pagina o salir de la opccion
 
@@ -398,14 +403,14 @@ public class SistemaImpl implements Sistema {
 
             if (pregunta5.equals("1")) {
 
-                // Se aumenta en 4 en 4 el indice "i" para que siga con la opcion
+                // Se aumenta en 4 en 4 el indice "i" para que siga avanzando
 
                 i = i + 4;
 
                 // Se aumenta en 1 en 1 la pagina
                 pagina = pagina + 1;
 
-                // Las 2 verificaciones que tiene para ver si esta dentro de las lista en las 4 partes aumentadas
+                // Las 2 verificaciones que tiene, para ver si esta dentro de las lista en las 4 partes aumentadas
                 if (i >= 0) {
                     if (i < vehiculos.size()) {
                         System.out.println("------- ( Vehiculo " + (i + 1) + ") -------");
@@ -604,7 +609,7 @@ public class SistemaImpl implements Sistema {
             System.out.println("1.- Siguiente pagina.");
             System.out.println("2.- Pagina anterior.");
             System.out.println("3.- Salir.");
-            System.out.println("Elija una opcio: ");
+            System.out.println("Elija una opcion: ");
             pregunta5 = opcion.nextLine();
         }
     }
@@ -1151,45 +1156,226 @@ public class SistemaImpl implements Sistema {
 
     @Override
     public void generarBoleta() {
+
         int id = 1;
-        id += boletas.size();
-        String marca = "";
-        String modelo = "";
-        String anioFabricacion = "";
-        String kilometraje = "";
-        String tipoVehiculo = "";
-        String atributo1 = "";
-        String atributo2 = "";
+        id = id + boletas.size();
 
-        System.out.println("¿cual es el id del vehiculo que quiere? ");
-        String idVehiculo = opcion.nextLine();
+        System.out.println("¿Cual es el id del vehiculo que quiere generar su boleta");
+        int i = opcion.nextInt();
+        if(i >= 0 && i <= vehiculos.size()){
+            int posicion = vehiculos.indexOf(vehiculos.get(i));
+            Vehiculo vehiculo = vehiculos.get(posicion);
 
-        for (int i = 0; i< vehiculos.size();i++){
-            if (vehiculos.get(i).getId() == Integer.parseInt(idVehiculo)){
-                marca = vehiculos.get(i).getMarca();
-                modelo = vehiculos.get(i).getModelo();
-                anioFabricacion = String.valueOf(vehiculos.get(i).getAnioFabricacion());
-                kilometraje = String.valueOf(vehiculos.get(i).getKilometraje());
-                tipoVehiculo = vehiculos.get(i).getTipoVehiculo();
-                atributo1 = vehiculos.get(i).getAtributo1();
-                atributo2 = vehiculos.get(i).getAtributo2();
-                break;
+            System.out.println("¿Cual es el id del mantenimiento que quiere agregar a la boleta (que sea igual al del vehiculo)");
+            int idMantenimiento = opcion.nextInt();
+
+            if (idMantenimiento >= 0 && idMantenimiento <= mantenimientos.size()){
+                if(mantenimientos.get(idMantenimiento - 1).getId() == i) {
+                    int posicion2 = mantenimientos.indexOf(mantenimientos.get(idMantenimiento - 1));
+                    Mantenimiento mantenimiento = mantenimientos.get(posicion2);
+
+                    Date fecha = new Date();
+
+                    Date fechaActual = fecha;
+
+                    System.out.println("¿Cual es el precio total?");
+                    double total = opcion.nextDouble();
+
+                    if (total > 0) {
+
+                        Boleta boleta = new Boleta(id,vehiculo,mantenimiento,fechaActual,total);
+                        System.out.println("Se creo la boleta.");
+                        System.out.println("------------------------------------");
+
+                        vehiculos.remove(vehiculos.get(i - 1));
+                        for (int in = 0; in < mantenimientos.size(); in++) {
+                            if (mantenimientos.get(in).getId() == i) {
+                                mantenimientos.remove(mantenimientos.get(in));
+                            }
+                        }
+                    }
+                }
             }
-
         }
-
-        String vehicilo = idVehiculo + "," +marca + "," + modelo + "," + anioFabricacion + "," + kilometraje + "," + tipoVehiculo + "," + atributo1 + "," + atributo2;
-
-        System.out.println(vehicilo);
-
-
-
-
+        else{
+            System.out.println("No se encontro el vehiculo.");
+        }
     }
 
     @Override
     public void verBoletas() {
 
+        // Se cran 2 cosas para que pueda funcionar la opcion las cuales son: "i" que es el indice de la lista boleta y "pagina" que es la pagina que estara las 4 vehiculos
+        int i = 0;
+        int pagina = 1;
+
+        // Se empieza a mostrar las boletas con sus atributos y su numero de pagina
+        if (boletas.size() == 1) {
+            System.out.println("-------( Boleta " + (i + 1) + " )-------");
+            System.out.println(boletas.get(i).getId());
+            System.out.println(boletas.get(i).getVehiculo());
+            System.out.println(boletas.get(i).getMantenimiento());
+            System.out.println(boletas.get(i).getFechaEmision());
+            System.out.println(boletas.get(i).getPagaTotal());
+            System.out.println("----------------------------------------");
+        }
+        else{
+            System.out.println("No hay boleta");
+            System.out.println("----------------------------------------");
+        }
+        if (boletas.size() == 2) {
+
+            System.out.println("-------( Boleta " + (i + 2) + " )-------");
+            System.out.println(boletas.get(i + 1).getId());
+            System.out.println(boletas.get(i + 1).getVehiculo());
+            System.out.println(boletas.get(i + 1).getMantenimiento());
+            System.out.println(boletas.get(i + 1).getFechaEmision());
+            System.out.println(boletas.get(i + 1).getPagaTotal());
+            System.out.println("----------------------------------------");
+        }
+        else {
+            System.out.println("No hay boleta");
+            System.out.println("----------------------------------------");
+        }
+        if(boletas.size() == 3) {
+            System.out.println("-------( Boleta " + (i + 3) + " )-------");
+            System.out.println(boletas.get(i + 2).getId());
+            System.out.println(boletas.get(i + 2).getVehiculo());
+            System.out.println(boletas.get(i + 2).getMantenimiento());
+            System.out.println(boletas.get(i + 2).getFechaEmision());
+            System.out.println(boletas.get(i + 2).getPagaTotal());
+            System.out.println("----------------------------------------");
+        }
+        else {
+            System.out.println("No hay boleta");
+            System.out.println("----------------------------------------");
+        }
+        if( boletas.size() == 4){
+
+            System.out.println("-------( Boleta " + (i + 4) + " )-------");
+            System.out.println(boletas.get(i + 3).getId());
+            System.out.println(boletas.get(i + 3).getVehiculo());
+            System.out.println(boletas.get(i + 3).getMantenimiento());
+            System.out.println(boletas.get(i + 3).getFechaEmision());
+            System.out.println(boletas.get(i + 3).getPagaTotal());
+            System.out.println("-----------------------------------------");
+        }
+        else{
+            System.out.println("No hay boleta");
+            System.out.println("-----------------------------------------");
+        }
+        System.out.println("Pagina " + pagina);
+
+        System.out.println("1.- Siguiente pagina.");
+        System.out.println("2.- Anterior pagina.");
+        System.out.println("3.- Salir.");
+        System.out.println("Elija una opcion: ");
+        String pregunta9 = opcion.nextLine();
+
+        while(true){
+            if (pregunta9.equals("1")){
+
+                i = i + 4;
+                pagina = pagina + 1;
+
+                if(i >= 0){
+                    if(i < boletas.size()) {
+                        System.out.println("-------( Boleta " + i + " )-------");
+                        System.out.println(boletas.get(i).getId());
+                        System.out.println(boletas.get(i).getVehiculo());
+                        System.out.println(boletas.get(i).getMantenimiento());
+                        System.out.println(boletas.get(i).getFechaEmision());
+                        System.out.println(boletas.get(i).getPagaTotal());
+                        System.out.println("----------------------------------");
+                    }
+                    else{
+                        System.out.println("No hay boleta.");
+                        System.out.println("----------------------------------");
+                    }
+                    if(i < boletas.size()) {
+                        if(i + 1 < boletas.size()) {
+                            System.out.println("-------( Boleta " + (i + 1) + " )-------");
+                            System.out.println(boletas.get(i + 1).getId());
+                            System.out.println(boletas.get(i + 1).getVehiculo());
+                            System.out.println(boletas.get(i + 1).getMantenimiento());
+                            System.out.println(boletas.get(i + 1).getFechaEmision());
+                            System.out.println(boletas.get(i + 1).getPagaTotal());
+                            System.out.println("-----------------------------------");
+                        }
+                        else{
+                            System.out.println("NO hay boleta.");
+                            System.out.println("-----------------------------------");
+                        }
+                    }
+                    else {
+                        System.out.println("No hay boleta.");
+                        System.out.println("-------------------------------------");
+                    }
+                    if( i < boletas.size()) {
+                        if(i + 2 < boletas.size()) {
+                            System.out.println("-------( Boleta " + (i + 2) + " )-------");
+                            System.out.println(boletas.get(i + 2).getId());
+                            System.out.println(boletas.get(i + 2).getVehiculo());
+                            System.out.println(boletas.get(i + 2).getMantenimiento());
+                            System.out.println(boletas.get(i + 2).getFechaEmision());
+                            System.out.println(boletas.get(i + 2).getPagaTotal());
+                            System.out.println("------------------------------------");
+                        }
+                        else{
+                            System.out.println("No hay boleta. ");
+                            System.out.println("------------------------------------");
+                        }
+                    }
+                    else {
+                        System.out.println("No hay boleta.");
+                        System.out.println("--------------------------------------");
+                    }
+                    if(i < boletas.size()){
+                        if(i + 3 < boletas.size()) {
+                            System.out.println("-------( Boleta " + (i + 2) + " )-------");
+                            System.out.println(boletas.get(i + 3).getId());
+                            System.out.println(boletas.get(i + 3).getVehiculo());
+                            System.out.println(boletas.get(i + 3).getMantenimiento());
+                            System.out.println(boletas.get(i + 3).getFechaEmision());
+                            System.out.println(boletas.get(i + 3).getPagaTotal());
+                            System.out.println("-------------------------------------");
+                        }
+                        else{
+                            System.out.println("No hay boleta.");
+                            System.out.println("-------------------------------------");
+                        }
+                    }
+                    else{
+                        System.out.println("No hay boleta.");
+                        System.out.println("--------------------------------------");
+                    }
+                }
+                else{
+                    System.out.println("No hay boleta.");
+                    System.out.println("------------------------------------");
+                }
+                System.out.println("Pagina " + pagina);
+            }
+            if (pregunta9.equals("2")){
+
+                i = i - 1;
+                pagina = pagina - 1;
+
+
+
+            }
+            if (pregunta9.equals("3")){
+                System.out.println("");
+                break;
+            }
+
+            System.out.println("1.- Siguiente pagina.");
+            System.out.println("2.- Anterior pagina.");
+            System.out.println("3.- Salir.");
+            System.out.println("Elija una opcion: ");
+            pregunta9 = opcion.nextLine();
+
+        }
 
     }
 
