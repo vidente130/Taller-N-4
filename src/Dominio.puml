@@ -12,6 +12,14 @@ entity cliente{
 entity vendedor {
 *rut
 *nombre
+*anios de experiencia
+}
+
+entity mantenimiento{
+*id
+*fecha
+*tipo de mantenimiento
+*descripcion
 }
 
 entity vehiculo{
@@ -23,7 +31,9 @@ entity vehiculo{
 }
 
 entity boleta{
-
+*id
+*fecha de emision
+*precio total
 }
 
 
