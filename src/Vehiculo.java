@@ -40,7 +40,7 @@ public class Vehiculo extends IdVehiculo{
     }
     //  getters de la clase vehiculo
     /**
-     * Es el get de marca
+     * Se obtiene la marca del vehiculo
      * @return retorna la marca
      */
     public String getMarca(){
@@ -49,7 +49,7 @@ public class Vehiculo extends IdVehiculo{
     }
 
     /**
-     * Es el get del modelo
+     * Se obtiene el modelo del vehiculo
      * @return retorna el modelo del vehiculo
      */
     public String getModelo(){
@@ -58,7 +58,7 @@ public class Vehiculo extends IdVehiculo{
     }
 
     /**
-     * Es el get del año de fabricacion
+     * Se obtiene el año de fabricacion del vehiculo
      * @return retorna el año de fabricacion del vehiculo
      */
     public int getAnioFabricacion(){
@@ -67,7 +67,7 @@ public class Vehiculo extends IdVehiculo{
     }
 
     /**
-     * Es el get del kilometraje
+     * Se obtiene el kilometraje del vehiculo
      * @return retorna el kilometraje del vehiculo
      */
     public int getKilometraje(){
@@ -76,7 +76,7 @@ public class Vehiculo extends IdVehiculo{
     }
 
     /**
-     * Es el get del tipo de vehiculo
+     * Se obtiene el tipo de vehiculo
      * @return retorna el tipo de vehiculo
      */
     public String getTipoVehiculo(){
@@ -85,7 +85,7 @@ public class Vehiculo extends IdVehiculo{
     }
 
     /**
-     * Es el get del primer atributo
+     * Se obtiene el primer atributo del vehiculo
      * @return retorna el primer atributo del vehiculo
      */
     public String getAtributo1(){
@@ -94,7 +94,7 @@ public class Vehiculo extends IdVehiculo{
     }
 
     /**
-     * Es el get del segundo atributo
+     * Se obtiene el segundo atributo del vehiculo
      * @return retorna el segundo atributo del vehiculo
      */
     public String getAtributo2(){

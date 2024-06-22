@@ -85,7 +85,6 @@ public interface Sistema {
 
     void verBoletas();
 
-    /**
     void salir();
-     */
+
 }

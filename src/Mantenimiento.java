@@ -30,7 +30,7 @@ public class Mantenimiento extends IdVehiculo{
     }
 
     /**
-     * Es el get del id del mantenimiento
+     * Se obtiene el id del mantenimiento
      * @return retorna el id del mantenimiento
      */
     public int getIdMantenimiento(){
@@ -39,7 +39,7 @@ public class Mantenimiento extends IdVehiculo{
 
 
     /**
-     * Es el get de la fecha del mantenimiento
+     * Se obtiene la fecha del mantenimiento
      * @return retorna la fecha del mantenimiento
      */
 
@@ -48,7 +48,7 @@ public class Mantenimiento extends IdVehiculo{
     }
 
     /**
-     * Es el get del tipo de mantenimiento
+     * Se obtiene el tipo de mantenimiento
      * @return retorna el tipo de mantenimiento que hay
      */
 
@@ -57,7 +57,7 @@ public class Mantenimiento extends IdVehiculo{
     }
 
     /**
-     * Es el get de la descripcion del mantenimiento
+     * Se obtiene la descripcion del mantenimiento
      * @return retorna la descripcion del mantenimiento.
      */
     public String getDescripcion(){

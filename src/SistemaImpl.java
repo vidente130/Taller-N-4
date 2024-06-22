@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 /**
- * Esta clase es el deja iniciar el menu principal del programa
+ * Esta clase es el que deja iniciar el menu principal del programa
  */
 public class SistemaImpl implements Sistema {
 
@@ -1486,11 +1486,13 @@ public class SistemaImpl implements Sistema {
 
     }
 
-/**
+
     @Override
     public void salir() {
 
-        // Se inicia la sobreescritura de los archivos.csv y se guardan los cambios
+        // Se inicia la sobreescritura de los archivos.csv y se guardan los cambios que se hicieron dentro del programa
+
+        // Para el archivo vehiculos.csv
         Out out = new Out("vehiculos.csv");
 
         for (int i = 0; i < vehiculos.size(); i++) {
@@ -1503,6 +1505,8 @@ public class SistemaImpl implements Sistema {
 
         }
 
+        // Para el archivo mantenimientos.csv
+
         Out out1 = new Out("mantenimientos.csv");
         for (int j = 0; j< mantenimientos.size() ;j++){
 
@@ -1513,6 +1517,7 @@ public class SistemaImpl implements Sistema {
             out1.println(mantenimientoEnEscrito);
         }
 
+        // Para el archivo boletas.csv
         Out out2 = new Out("boletas.csv");
         for (int j = 0; j< boletas.size() ;j++){
 
@@ -1533,5 +1538,4 @@ public class SistemaImpl implements Sistema {
 
 
     }
-    */
 }

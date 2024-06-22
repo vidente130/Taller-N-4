@@ -31,7 +31,7 @@ public class Boleta {
     }
 
     /**
-     * Es el get de id de la boleta
+     * Se obtiene el id de la boleta
      * @return retorna el id de la boleta
      */
     public int getId() {
@@ -39,7 +39,7 @@ public class Boleta {
     }
 
     /**
-     * Es el get del vehiculo
+     * Se obtiene el vehiculo
      * @return retorna el vehiculo
      */
     public Vehiculo getVehiculo() {
@@ -47,7 +47,7 @@ public class Boleta {
     }
 
     /**
-     * Es el get del mantenimiento
+     * Se obtiene el mantenimiento
      * @return retorna el mantenimiento
      */
     public Mantenimiento getMantenimiento() {
@@ -55,7 +55,7 @@ public class Boleta {
     }
 
     /**
-     * Es el get de la fecha que se creo la boleta
+     * Se obtiene la fecha que se creo la boleta
      * @return retonra la fecha de creacion de la boleta
      */
     public Date getFechaEmision() {
@@ -63,7 +63,7 @@ public class Boleta {
     }
 
     /**
-     * Es el get de la pagaTotal por los mantenimiento del vehiculo
+     * Se obtiene la paga total por los mantenimiento del vehiculo
      * @return retorna la pagaTotal de la boleta contando el IVA
      */
     public double getPagaTotal() {

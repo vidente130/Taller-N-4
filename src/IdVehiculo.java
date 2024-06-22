@@ -14,7 +14,7 @@ public class IdVehiculo {
     }
 
     /**
-     * Es el get del id del vehiculo
+     * Obtiene el id del vehiculo
      * @return retorna el id del vehiculo
      */
     public int getId(){
