@@ -74,16 +74,16 @@ class Vehiculo{
 
 }
 
-Vehiculo --|> IdVehiculo : -id: int
-Mantenimiento --|> IdVehiculo: -id: int
+Vehiculo"1" --|>"1" IdVehiculo : -id: int
+Mantenimiento"1" --|>"1" IdVehiculo: -id: int
 
-SistemaImpl ..|> Sistema: implementa
-Vehiculo --> SistemaImpl: -vehiculos: ArrayList<Vehiculo>
-Mantenimiento --> SistemaImpl: -mantenimientos: ArrayList<Mantenimiento>
+SistemaImpl"1" ..|>"1" Sistema: implementa
+Vehiculo"1" -->"1" SistemaImpl: -vehiculos: ArrayList<Vehiculo>
+Mantenimiento"1" -->"1" SistemaImpl: -mantenimientos: ArrayList<Mantenimiento>
 
-Boleta <-- Vehiculo: -vehiculo: Vehiculo
-Boleta <-- Mantenimiento: -mantenimiento: Mantenimiento
-Boleta --> SistemaImpl: -boletas: ArrayList<Boleta>
+Boleta"1" <--"1" Vehiculo: -vehiculo: Vehiculo
+Boleta"1" <--"1..*" Mantenimiento: -mantenimiento: Mantenimiento
+Boleta "1" --> "1" SistemaImpl: -boletas: ArrayList<Boleta>
 
 
 @enduml
