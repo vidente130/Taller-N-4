@@ -1487,7 +1487,9 @@ public class SistemaImpl implements Sistema {
 
     }
 
-
+    /**
+     * se utiliza para salir, guardando los cambios hechos.
+     */
     @Override
     public void salir() {
 
