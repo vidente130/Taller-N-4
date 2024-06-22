@@ -86,7 +86,6 @@ public interface Sistema {
     void verBoletas();
 
     /**
-     * esta funcion permite poder salir de la pagina y guardar los archivos que hay
-     */
     void salir();
+     */
 }
