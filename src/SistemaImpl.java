@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
+// Nombres: Alvaro Zapana y Renato Aguilar.
 /**
  * Esta clase es el que deja iniciar el menu principal del programa
  */
@@ -1210,7 +1211,7 @@ public class SistemaImpl implements Sistema {
                     double total = opcion.nextDouble();
 
                     if (total > 0) {
-
+                        total = total + (total*0.19);
                         // Se instancia la clase Boleta y se agrega a la lista de boletas
                         Boleta boleta = new Boleta(id,vehiculo,mantenimiento,fechaActual,total);
                         boletas.add(boleta);
