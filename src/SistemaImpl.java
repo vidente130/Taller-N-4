@@ -859,6 +859,7 @@ public class SistemaImpl implements Sistema {
                                     System.out.println(vehiculos.get(i).getAtributo2());
                                     System.out.println("-------------------------------------");
                                     System.out.println("Pagina " + pagina);
+                                    break;
                                 }
                             }
                         }
@@ -945,6 +946,7 @@ public class SistemaImpl implements Sistema {
                                     System.out.println(vehiculos.get(i).getAtributo2());
                                     System.out.println("-----------------------------------------");
                                     System.out.println("Pagina " + pagina);
+                                    break;
                                 }
                             }
                         }
@@ -1401,6 +1403,7 @@ public class SistemaImpl implements Sistema {
                         System.out.println(boletas.get(i).getMantenimiento());
                         System.out.println(boletas.get(i).getFechaEmision());
                         System.out.println(boletas.get(i).getPagaTotal());
+                        System.out.println("----------------------------------------");
                     }
                     else{
                         System.out.println("No hay boleta.");
@@ -1414,6 +1417,7 @@ public class SistemaImpl implements Sistema {
                             System.out.println(boletas.get(i + 1).getMantenimiento());
                             System.out.println(boletas.get(i + 1).getFechaEmision());
                             System.out.println(boletas.get(i + 1).getPagaTotal());
+                            System.out.println("----------------------------------------");
                         }
                         else{
                             System.out.println("No hay boleta.");
@@ -1432,6 +1436,7 @@ public class SistemaImpl implements Sistema {
                             System.out.println(boletas.get(i + 2).getMantenimiento());
                             System.out.println(boletas.get(i + 2).getFechaEmision());
                             System.out.println(boletas.get(i + 2).getPagaTotal());
+                            System.out.println("-------------------------------------");
                         }
                         else{
                             System.out.println("No hay boleta.");
